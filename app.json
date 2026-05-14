@@ -7,7 +7,7 @@
     "icon": "./assets/images/icon.png",
     "scheme": "expostartkit",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.anonymous.expo-starter-kit-typescript",
@@ -18,9 +18,11 @@
         "NSMicrophoneUsageDescription": "Starter Kit uses your microphone for AR experiences.",
         "GARAPIKey": "Your Google Cloud API Key",
         "NSLocationWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to use your location for AR experiences",
-        "NSLocationAlwaysAndWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to use your location for AR experiences"
-      },
-      "appleTeamId": "LVTPS6J5KQ"
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to use your location for AR experiences",
+        "RVApiKey": "Add your API key here",
+        "RVProjectId": "Add your project ID here",
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "package": "com.anonymous.expostarterkittypescript",
@@ -31,7 +33,12 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
     },
     "web": {
       "output": "static",
@@ -73,6 +80,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "63a6a2e2-449b-4bb8-949c-13d477996c04"
+      }
+    },
+    "owner": "imnamgi2386"
   }
 }
