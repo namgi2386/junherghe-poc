@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import {
   ViroARSceneNavigator, ViroARScene, ViroARPlane,
-  Viro3DObject, ViroAmbientLight, ViroSpotLight,
+  Viro3DObject, ViroAmbientLight,
 } from '@reactvision/react-viro';
 import { useRouter } from 'expo-router';
 
@@ -10,20 +10,13 @@ function AR3DScene() {
   return (
     <ViroARScene>
       <ViroAmbientLight color="#ffffff" intensity={200} />
-      <ViroSpotLight
-        position={[0, 3, 0]}
-        direction={[0, -1, 0]}
-        color="#ffffff"
-        intensity={300}
-        attenuationStartDistance={5}
-        attenuationEndDistance={10}
-        castsShadow={true}
-      />
-      <ViroARPlane alignment="Horizontal">
+      <ViroARPlane minHeight={0.1} minWidth={0.1} alignment="Horizontal">
         <Viro3DObject
+          // eslint-disable-next-line @typescript-eslint/no-require-imports
           source={require('../../assets/models/character.glb')}
           position={[0, 0, 0]}
-          scale={[0.5, 0.5, 0.5]}
+          scale={[10, 10, 10]}
+          rotation={[0, 0, 0]}
           type="GLB"
         />
       </ViroARPlane>
