@@ -7,7 +7,7 @@ function ARScene() {
   return (
     <ViroARScene>
       <ViroText
-        text="AR 동작 확인"
+        text="AR Scene Active"
         position={[0, 0, -2]}
         style={{ fontSize: 20, color: '#ffffff' }}
       />
