@@ -13,12 +13,14 @@ function ARInteractionScene() {
   return (
     <ViroARScene>
       <ViroAmbientLight color="#ffffff" intensity={200} />
-      <ViroARPlane alignment="Horizontal">
+      <ViroARPlane minHeight={0.1} minWidth={0.1} alignment="Horizontal">
         {!collected ? (
           <Viro3DObject
+            // eslint-disable-next-line @typescript-eslint/no-require-imports
             source={require('../../assets/models/character.glb')}
             position={[0, 0, 0]}
-            scale={[0.5, 0.5, 0.5]}
+            scale={[10, 10, 10]}
+            rotation={[0, 0, 0]}
             type="GLB"
             onClick={() => {
               const next = tapCount + 1;
@@ -28,7 +30,7 @@ function ARInteractionScene() {
           />
         ) : (
           <ViroText
-            text="수집 완료!"
+            text="Collected!"
             position={[0, 0.5, 0]}
             style={{ fontSize: 20, color: '#ffff00' }}
           />
@@ -36,7 +38,7 @@ function ARInteractionScene() {
       </ViroARPlane>
       {!collected && (
         <ViroText
-          text={`탭 ${tapCount}/3`}
+          text={`Tap ${tapCount}/3`}
           position={[0, 0.8, -2]}
           style={{ fontSize: 16, color: '#ffffff' }}
         />
